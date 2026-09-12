@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Azis — Software Engineer</title>
+    <meta name="description" content="Software Engineer building web & mobile applications. Open source contributor. Available for freelance projects.">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%236366f1'/><stop offset='100%' stop-color='%23a855f7'/></linearGradient></defs><rect width='100' height='100' rx='22' fill='url(%23g)'/><text x='50' y='68' font-size='60' font-family='system-ui' font-weight='700' fill='%23fff' text-anchor='middle'>A</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Inter', 'system-ui', 'sans-serif'],
+                        mono: ['ui-monospace', '"SF Mono"', '"Cascadia Code"', '"Roboto Mono"', 'Menlo', 'monospace'],
+                    },
+                    colors: {
+                        ink: {
+                            50: '#f8f8f9', 100: '#f1f1f3', 200: '#e3e3e7', 300: '#c8c8cf',
+                            400: '#9a9aa5', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                            800: '#27272a', 900: '#18181b', 950: '#0a0a0c',
+                        },
+                        primary: {
+                            50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc',
+                            400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca',
+                            800: '#3730a3', 900: '#312e81', 950: '#1e1b4b',
+                        },
+                        violet: {
+                            50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 500: '#8b5cf6',
+                            600: '#7c3aed', 700: '#6d28d9',
+                        },
+                        emerald: {
+                            50: '#ecfdf5', 100: '#d1fae5', 200: '#a7f3d0', 500: '#10b981',
+                            600: '#059669', 700: '#047857',
+                        },
+                        amber: {
+                            50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 500: '#f59e0b',
+                            600: '#d97706', 700: '#b45309',
+                        },
+                        rose: {
+                            50: '#fff1f2', 100: '#ffe4e6', 200: '#fecdd3', 500: '#f43f5e',
+                            600: '#e11d48', 700: '#be123c',
+                        },
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.6s ease-out',
+                        'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(12px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseSoft: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.5' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .grid-bg {
+            background-image:
+                linear-gradient(to right, rgba(99,102,241,0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(99,102,241,0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .grid-bg {
+                background-image:
+                    linear-gradient(to right, rgba(99,102,241,0.08) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(99,102,241,0.08) 1px, transparent 1px);
+            }
+        }
+        .grid-mask {
+            mask-image: radial-gradient(ellipse 70% 50% at 50% 0%, #000 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 0%, #000 30%, transparent 80%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 8s ease infinite;
+        }
+        @keyframes gradient {
+            '0%, 100%' { background-position: 0% 50%; }
+            '50%' { background-position: 100% 50%; }
+        }
+        .aurora {
+            background:
+                radial-gradient(ellipse 60% 50% at 20% 10%, rgba(99,102,241,0.18), transparent 60%),
+                radial-gradient(ellipse 50% 40% at 80% 20%, rgba(168,85,247,0.15), transparent 60%),
+                radial-gradient(ellipse 40% 40% at 50% 80%, rgba(236,72,153,0.10), transparent 60%);
+        }
+        @media (prefers-color-scheme: dark) {
+            .aurora {
+                background:
+                    radial-gradient(ellipse 60% 50% at 20% 10%, rgba(99,102,241,0.25), transparent 60%),
+                    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(168,85,247,0.20), transparent 60%),
+                    radial-gradient(ellipse 40% 40% at 50% 80%, rgba(236,72,153,0.15), transparent 60%);
+            }
+        }
+
+        /* Mobile menu */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+        }
+
+        /* Prevent horizontal scroll */
+        html, body {
+            overflow-x: hidden;
+        }
+
+        /* Text wrapping */
+        h1, h2, h3, p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-ink-950 text-ink-900 dark:text-ink-100 antialiased font-sans selection:bg-primary-500 selection:text-white">
+
+<!-- ============ ANNOUNCEMENT ============ -->
+<div class="relative overflow-hidden border-b border-primary-100 dark:border-primary-950">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-50 via-violet-50 to-rose-50 dark:from-primary-950/30 dark:via-violet-950/30 dark:to-rose-950/30"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-center gap-2 text-xs text-center">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white dark:bg-ink-900 text-emerald-700 dark:text-emerald-400 font-medium border border-emerald-200 dark:border-emerald-800 shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-soft"></span>
+            <span class="hidden xs:inline">Available</span>
+        </span>
+        <span class="text-ink-600 dark:text-ink-400 truncate">
+            Terbuka untuk freelance
+        </span>
+        <a href="#contact" class="text-primary-600 dark:text-primary-400 font-medium hover:underline shrink-0">Hubungi →</a>
+    </div>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="sticky top-0 z-50 border-b border-ink-100 dark:border-ink-900 bg-white/85 dark:bg-ink-950/85 backdrop-blur-lg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2 sm:gap-2.5 group">
+            <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-primary-500 via-violet-500 to-rose-500 text-white grid place-items-center font-bold text-xs sm:text-sm shadow-lg shadow-primary-500/30 group-hover:scale-105 transition-transform">A</span>
+            <span class="font-semibold text-sm sm:text-[15px] tracking-tight">Abdul Azis</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8 text-sm text-ink-600 dark:text-ink-400">
+            <a href="#opensource" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Open Source</a>
+            <a href="#services" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Services</a>
+            <a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Blog</a>
+            <a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+            <a href="https://github.com/azizp2" class="hidden sm:inline-flex items-center justify-center w-9 h-9 rounded-md text-ink-600 dark:text-ink-400 hover:text-ink-900 dark:hover:text-ink-100 hover:bg-ink-50 dark:hover:bg-ink-900 transition">
+                <svg class="w-4 h-4" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                </svg>
+            </a>
+
+            <!-- CTA — desktop -->
+            <a href="#contact" class="hidden sm:inline-flex items-center h-9 px-4 rounded-md text-sm font-medium bg-gradient-to-r from-primary-600 to-violet-600 text-white hover:from-primary-700 hover:to-violet-700 shadow-lg shadow-primary-500/25 transition">
+                Hire me
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMenu()" class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-md text-ink-600 dark:text-ink-400 hover:bg-ink-50 dark:hover:bg-ink-900 transition">
+                <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden border-t border-ink-100 dark:border-ink-900 bg-white dark:bg-ink-950">
+        <nav class="px-4 py-3 flex flex-col gap-1">
+            <a href="#opensource" onclick="closeMenu()" class="px-3 py-2.5 rounded-md text-sm text-ink-600 dark:text-ink-400 hover:bg-ink-50 dark:hover:bg-ink-900 hover:text-primary-600 dark:hover:text-primary-400 transition">Open Source</a>
+            <a href="#services" onclick="closeMenu()" class="px-3 py-2.5 rounded-md text-sm text-ink-600 dark:text-ink-400 hover:bg-ink-50 dark:hover:bg-ink-900 hover:text-primary-600 dark:hover:text-primary-400 transition">Services</a>
+            <a href="#" onclick="closeMenu()" class="px-3 py-2.5 rounded-md text-sm text-ink-600 dark:text-ink-400 hover:bg-ink-50 dark:hover:bg-ink-900 hover:text-primary-600 dark:hover:text-primary-400 transition">Blog</a>
+            <a href="#" onclick="closeMenu()" class="px-3 py-2.5 rounded-md text-sm text-ink-600 dark:text-ink-400 hover:bg-ink-50 dark:hover:bg-ink-900 hover:text-primary-600 dark:hover:text-primary-400 transition">About</a>
+            <a href="https://github.com/azizp2" onclick="closeMenu()" class="px-3 py-2.5 rounded-md text-sm text-ink-600 dark:text-ink-400 hover:bg-ink-50 dark:hover:bg-ink-900 hover:text-primary-600 dark:hover:text-primary-400 transition">GitHub</a>
+            <a href="#contact" onclick="closeMenu()" class="mt-2 inline-flex items-center justify-center h-10 px-4 rounded-md text-sm font-medium bg-gradient-to-r from-primary-600 to-violet-600 text-white shadow-lg shadow-primary-500/25 transition">
+                Hire me
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="relative overflow-hidden border-b border-ink-100 dark:border-ink-900">
+    <div class="absolute inset-0 aurora"></div>
+    <div class="absolute inset-0 grid-bg grid-mask pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-14 sm:pb-24 md:pt-28 md:pb-32">
+        <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 h-7 px-3 rounded-full bg-white/80 dark:bg-ink-900/80 backdrop-blur border border-emerald-200 dark:border-emerald-800 text-xs text-emerald-700 dark:text-emerald-400 mb-6 sm:mb-8 animate-fade-up">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-soft"></span>
+                <span>Available for freelance projects</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.03em] leading-[1.1] sm:leading-[1.05] text-ink-900 dark:text-ink-50 animate-fade-up">
+                Software Engineer<br>
+                <span class="gradient-text">building digital products.</span>
+            </h1>
+
+            <p class="mt-5 sm:mt-8 text-base sm:text-lg md:text-xl text-ink-500 dark:text-ink-400 max-w-2xl leading-relaxed animate-fade-up">
+                Saya membangun aplikasi web & mobile end-to-end — dari backend API sampai frontend.
+                Terbuka untuk freelance, kolaborasi open source, atau konsultasi arsitektur.
+            </p>
+
+            <div class="mt-7 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 animate-fade-up">
+                <a href="#services" class="inline-flex items-center justify-center gap-2 h-11 sm:h-12 px-5 sm:px-7 rounded-lg text-sm font-semibold bg-gradient-to-r from-primary-600 to-violet-600 text-white hover:from-primary-700 hover:to-violet-700 shadow-lg shadow-primary-500/25 transition-all hover:translate-y-[-1px]">
+                    View my services
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://github.com/azizp2" class="inline-flex items-center justify-center gap-2 h-11 sm:h-12 px-5 sm:px-7 rounded-lg text-sm font-semibold border border-ink-200 dark:border-ink-800 text-ink-700 dark:text-ink-300 hover:border-primary-500 dark:hover:border-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950/30 hover:text-primary-700 dark:hover:text-primary-400 transition">
+                    <svg class="w-4 h-4" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+
+            <div class="mt-8 sm:mt-12 flex items-center gap-3 sm:gap-6 text-xs text-ink-400 dark:text-ink-500 animate-fade-up flex-wrap">
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-500 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <span>Full-Stack</span>
+                </div>
+                <div class="w-px h-3 bg-ink-200 dark:bg-ink-800"></div>
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span>Open source</span>
+                </div>
+                <div class="w-px h-3 bg-ink-200 dark:bg-ink-800"></div>
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>Indonesia</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     WHAT I DO
+============================================================ -->
+<section class="border-b border-ink-100 dark:border-ink-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-24">
+        <div class="max-w-2xl mb-10 sm:mb-14">
+            <div class="text-xs font-semibold tracking-widest uppercase text-primary-600 dark:text-primary-400 mb-3">What I do</div>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.02em] text-ink-900 dark:text-ink-50 leading-tight">
+                Beberapa hal yang saya kerjakan.
+            </h2>
+            <p class="text-sm sm:text-base text-ink-500 dark:text-ink-400 leading-relaxed mt-3 sm:mt-4">
+                Dari menulis kode sehari-hari sampai membangun tools untuk developer lain.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <!-- Full-Stack Development -->
+            <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-primary-950/40 dark:to-ink-950 rounded-2xl border border-primary-100 dark:border-primary-900/50 p-5 sm:p-7 hover:border-primary-300 dark:hover:border-primary-700 transition">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 grid place-items-center mb-4 sm:mb-5 shadow-lg shadow-primary-500/30">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <h3 class="font-semibold text-base sm:text-lg text-ink-900 dark:text-ink-50 mb-2">Full-Stack Development</h3>
+                <p class="text-sm text-ink-600 dark:text-ink-400 leading-relaxed mb-4">
+                    Membangun aplikasi web & mobile end-to-end — dari backend API, frontend, sampai deployment.
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-primary-700 dark:text-primary-400 border border-primary-200 dark:border-primary-800">.NET</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-primary-700 dark:text-primary-400 border border-primary-200 dark:border-primary-800">JavaScript</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-primary-700 dark:text-primary-400 border border-primary-200 dark:border-primary-800">PHP</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-primary-700 dark:text-primary-400 border border-primary-200 dark:border-primary-800">Laravel</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-primary-700 dark:text-primary-400 border border-primary-200 dark:border-primary-800">Mobile</span>
+                </div>
+            </div>
+
+            <!-- Open Source -->
+            <div class="group bg-gradient-to-br from-violet-50 to-white dark:from-violet-950/40 dark:to-ink-950 rounded-2xl border border-violet-100 dark:border-violet-900/50 p-5 sm:p-7 hover:border-violet-300 dark:hover:border-violet-700 transition">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 grid place-items-center mb-4 sm:mb-5 shadow-lg shadow-violet-500/30">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3 class="font-semibold text-base sm:text-lg text-ink-900 dark:text-ink-50 mb-2">Open Source</h3>
+                <p class="text-sm text-ink-600 dark:text-ink-400 leading-relaxed mb-4">
+                    Membangun library & tools untuk komunitas developer. Fokus di arsitektur, clean code, dan developer experience.
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-violet-700 dark:text-violet-400 border border-violet-200 dark:border-violet-800">Libraries</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-violet-700 dark:text-violet-400 border border-violet-200 dark:border-violet-800">Frameworks</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-violet-700 dark:text-violet-400 border border-violet-200 dark:border-violet-800">NuGet</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-violet-700 dark:text-violet-400 border border-violet-200 dark:border-violet-800">npm</span>
+                </div>
+            </div>
+
+            <!-- Writing & Sharing -->
+            <div class="group bg-gradient-to-br from-emerald-50 to-white dark:from-emerald-950/40 dark:to-ink-950 rounded-2xl border border-emerald-100 dark:border-emerald-900/50 p-5 sm:p-7 hover:border-emerald-300 dark:hover:border-emerald-700 transition sm:col-span-2 lg:col-span-1">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 grid place-items-center mb-4 sm:mb-5 shadow-lg shadow-emerald-500/30">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+                <h3 class="font-semibold text-base sm:text-lg text-ink-900 dark:text-ink-50 mb-2">Writing & Sharing</h3>
+                <p class="text-sm text-ink-600 dark:text-ink-400 leading-relaxed mb-4">
+                    Menulis artikel dan membuat video tentang software engineering, arsitektur, dan pengalaman membangun produk.
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">Articles</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">Tutorials</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">Videos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     OPEN SOURCE
+============================================================ -->
+<section id="opensource" class="border-b border-ink-100 dark:border-ink-900 bg-gradient-to-b from-ink-50 to-white dark:from-ink-900/20 dark:to-ink-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-24">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 sm:mb-12">
+            <div class="max-w-2xl">
+                <div class="text-xs font-semibold tracking-widest uppercase text-primary-600 dark:text-primary-400 mb-3">Open Source</div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.02em] text-ink-900 dark:text-ink-50 leading-tight">
+                    Libraries I maintain.
+                </h2>
+                <p class="text-sm sm:text-base text-ink-500 dark:text-ink-400 leading-relaxed mt-3 sm:mt-4">
+                    Tools yang saya bangun untuk membuat hidup developer lebih mudah.
+                </p>
+            </div>
+            <a href="https://github.com/azizp2" class="inline-flex items-center gap-1 text-sm font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition shrink-0">
+                View all on GitHub
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+            <!-- Eventra — Featured -->
+            <a href="https://github.com/azizp2/Eventra" class="md:col-span-2 group block rounded-2xl bg-gradient-to-br from-primary-50 via-violet-50 to-white dark:from-primary-950/40 dark:via-violet-950/30 dark:to-ink-950 border border-primary-200 dark:border-primary-900/50 p-5 sm:p-7 md:p-8 hover:border-primary-400 dark:hover:border-primary-600 hover:shadow-xl hover:shadow-primary-500/10 transition-all">
+                <div class="flex flex-col gap-4 sm:gap-6">
+                    <div class="flex items-start gap-3 sm:gap-4 min-w-0">
+                        <div class="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-primary-500 via-violet-500 to-rose-500 text-white grid place-items-center font-bold text-lg sm:text-xl shrink-0 shadow-lg shadow-primary-500/30">E</div>
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 sm:gap-3 mb-2 flex-wrap">
+                                <h3 class="text-lg sm:text-xl font-semibold text-ink-900 dark:text-ink-50">Eventra</h3>
+                                <span class="text-[10px] sm:text-xs font-mono px-1.5 sm:px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-primary-700 dark:text-primary-400 border border-primary-200 dark:border-primary-800">v1.0.0</span>
+                                <span class="text-[10px] sm:text-xs font-medium px-1.5 sm:px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900">Active</span>
+                                <span class="text-[10px] sm:text-xs font-medium px-1.5 sm:px-2 py-0.5 rounded-md bg-gradient-to-r from-amber-400 to-amber-500 text-white shadow-sm">Featured</span>
+                            </div>
+                            <p class="text-sm text-ink-600 dark:text-ink-400 leading-relaxed mb-3 sm:mb-4">
+                                Simple Domain Events for .NET. Built on MediatR, integrated with EF Core.
+                                Raise events from entities, dispatch automatically after commit.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2">
+                                <span class="text-[10px] sm:text-xs font-mono px-1.5 sm:px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-ink-600 dark:text-ink-400 border border-ink-200 dark:border-ink-800">C#</span>
+                                <span class="text-[10px] sm:text-xs font-mono px-1.5 sm:px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-ink-600 dark:text-ink-400 border border-ink-200 dark:border-ink-800">.NET 10</span>
+                                <span class="text-[10px] sm:text-xs font-mono px-1.5 sm:px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-ink-600 dark:text-ink-400 border border-ink-200 dark:border-ink-800">MediatR</span>
+                                <span class="text-[10px] sm:text-xs font-mono px-1.5 sm:px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-ink-600 dark:text-ink-400 border border-ink-200 dark:border-ink-800">EF Core</span>
+                                <span class="text-[10px] sm:text-xs font-mono px-1.5 sm:px-2 py-0.5 rounded-md bg-white dark:bg-ink-900 text-ink-600 dark:text-ink-400 border border-ink-200 dark:border-ink-800">NuGet</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm font-medium text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300">
+                        <span>View project</span>
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Placeholder 1 -->
+            <div class="rounded-2xl border border-dashed border-ink-200 dark:border-ink-800 p-5 sm:p-7 bg-white/50 dark:bg-ink-950/50">
+                <div class="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-ink-100 dark:bg-ink-900 grid place-items-center font-bold text-lg sm:text-xl text-ink-400 dark:text-ink-600 mb-3 sm:mb-4">+</div>
+                <h3 class="font-semibold text-ink-500 dark:text-ink-400 mb-2">More coming soon</h3>
+                <p class="text-sm text-ink-400 dark:text-ink-500 leading-relaxed">
+                    Library & tools baru sedang dalam pengembangan.
+                </p>
+            </div>
+
+            <!-- Placeholder 2 -->
+            <div class="rounded-2xl border border-dashed border-ink-200 dark:border-ink-800 p-5 sm:p-7 bg-white/50 dark:bg-ink-950/50">
+                <div class="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-ink-100 dark:bg-ink-900 grid place-items-center font-bold text-lg sm:text-xl text-ink-400 dark:text-ink-600 mb-3 sm:mb-4">+</div>
+                <h3 class="font-semibold text-ink-500 dark:text-ink-400 mb-2">Your idea here?</h3>
+                <p class="text-sm text-ink-400 dark:text-ink-500 leading-relaxed">
+                    Punya ide library yang ingin dibangun? <a href="#contact" class="text-primary-600 dark:text-primary-400 hover:underline">Hubungi saya</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section id="services" class="border-b border-ink-100 dark:border-ink-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-24">
+        <div class="max-w-2xl mb-10 sm:mb-14">
+            <div class="text-xs font-semibold tracking-widest uppercase text-primary-600 dark:text-primary-400 mb-3">Services</div>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.02em] text-ink-900 dark:text-ink-50 leading-tight">
+                Jasa yang saya tawarkan.
+            </h2>
+            <p class="text-sm sm:text-base text-ink-500 dark:text-ink-400 leading-relaxed mt-3 sm:mt-4">
+                Dari web development sampai konsultasi arsitektur — untuk berbagai stack teknologi.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <!-- Service 1 -->
+            <div class="group bg-white dark:bg-ink-950 rounded-2xl border border-ink-200 dark:border-ink-800 p-5 sm:p-7 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-xl hover:shadow-primary-500/5 transition-all">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-primary-500 to-violet-600 grid place-items-center mb-4 sm:mb-5 shadow-lg shadow-primary-500/30">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <h3 class="text-base sm:text-lg md:text-xl font-semibold text-ink-900 dark:text-ink-50 mb-2 sm:mb-3">Web & API Development</h3>
+                <p class="text-sm text-ink-500 dark:text-ink-400 leading-relaxed mb-4 sm:mb-5">
+                    Membangun aplikasi web modern & REST API menggunakan .NET, JavaScript, atau PHP/Laravel — production-ready dengan testing.
+                </p>
+                <ul class="space-y-2 text-sm text-ink-600 dark:text-ink-400">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>REST API & GraphQL</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Database design & migrations</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Unit test & integration test</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="group bg-white dark:bg-ink-950 rounded-2xl border border-ink-200 dark:border-ink-800 p-5 sm:p-7 hover:border-violet-300 dark:hover:border-violet-700 hover:shadow-xl hover:shadow-violet-500/5 transition-all">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-violet-500 to-rose-600 grid place-items-center mb-4 sm:mb-5 shadow-lg shadow-violet-500/30">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3 class="text-base sm:text-lg md:text-xl font-semibold text-ink-900 dark:text-ink-50 mb-2 sm:mb-3">Architecture Consulting</h3>
+                <p class="text-sm text-ink-500 dark:text-ink-400 leading-relaxed mb-4 sm:mb-5">
+                    Review & redesign arsitektur aplikasi — Clean Architecture, DDD, CQRS, dan Domain Events untuk berbagai stack.
+                </p>
+                <ul class="space-y-2 text-sm text-ink-600 dark:text-ink-400">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Code review & refactoring</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Design pattern implementation</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Performance optimization</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="group bg-white dark:bg-ink-950 rounded-2xl border border-ink-200 dark:border-ink-800 p-5 sm:p-7 hover:border-emerald-300 dark:hover:border-emerald-700 hover:shadow-xl hover:shadow-emerald-500/5 transition-all">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 grid place-items-center mb-4 sm:mb-5 shadow-lg shadow-emerald-500/30">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </div>
+                <h3 class="text-base sm:text-lg md:text-xl font-semibold text-ink-900 dark:text-ink-50 mb-2 sm:mb-3">Legacy Modernization</h3>
+                <p class="text-sm text-ink-500 dark:text-ink-400 leading-relaxed mb-4 sm:mb-5">
+                    Migrasi aplikasi lama ke stack modern — dari .NET Framework, Web Forms, atau sistem legacy lainnya.
+                </p>
+                <ul class="space-y-2 text-sm text-ink-600 dark:text-ink-400">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>.NET Framework → .NET 8/10</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Monolith → Modular monolith</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Database migration</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="group bg-white dark:bg-ink-950 rounded-2xl border border-ink-200 dark:border-ink-800 p-5 sm:p-7 hover:border-amber-300 dark:hover:border-amber-700 hover:shadow-xl hover:shadow-amber-500/5 transition-all">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 grid place-items-center mb-4 sm:mb-5 shadow-lg shadow-amber-500/30">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <h3 class="text-base sm:text-lg md:text-xl font-semibold text-ink-900 dark:text-ink-50 mb-2 sm:mb-3">Custom Library Development</h3>
+                <p class="text-sm text-ink-500 dark:text-ink-400 leading-relaxed mb-4 sm:mb-5">
+                    Membangun internal library atau package khusus untuk kebutuhan tim atau organisasi Anda.
+                </p>
+                <ul class="space-y-2 text-sm text-ink-600 dark:text-ink-400">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Design & implementation</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Documentation & samples</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>CI/CD setup (NuGet / npm)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     LATEST WRITING
+============================================================ -->
+<section class="border-b border-ink-100 dark:border-ink-900 bg-gradient-to-b from-white to-ink-50 dark:from-ink-950 dark:to-ink-900/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-24">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 sm:mb-12">
+            <div class="max-w-2xl">
+                <div class="text-xs font-semibold tracking-widest uppercase text-primary-600 dark:text-primary-400 mb-3">Writing</div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.02em] text-ink-900 dark:text-ink-50 leading-tight">
+                    Latest articles.
+                </h2>
+                <p class="text-sm sm:text-base text-ink-500 dark:text-ink-400 leading-relaxed mt-3 sm:mt-4">
+                    Tulisan tentang software engineering, arsitektur, dan pengalaman membangun produk.
+                </p>
+            </div>
+            <a href="#" class="inline-flex items-center gap-1 text-sm font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition shrink-0">
+                View all
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <article class="group bg-white dark:bg-ink-950 rounded-2xl border border-ink-200 dark:border-ink-800 overflow-hidden hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-xl hover:shadow-primary-500/10 transition-all">
+                <div class="aspect-video bg-gradient-to-br from-primary-500 via-primary-600 to-violet-600 relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+                    <div class="absolute inset-0 grid place-items-center">
+                        <svg class="w-12 h-12 sm:w-14 sm:h-14 text-white/90 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                </div>
+                <div class="p-5 sm:p-6">
+                    <div class="flex items-center gap-2 mb-3 flex-wrap">
+                        <span class="text-xs font-mono text-ink-400 dark:text-ink-500">Coming soon</span>
+                        <span class="w-1 h-1 rounded-full bg-ink-300 dark:bg-ink-700"></span>
+                        <span class="text-xs font-medium px-2 py-0.5 rounded-md bg-primary-50 dark:bg-primary-950/50 text-primary-700 dark:text-primary-400 border border-primary-200 dark:border-primary-900">Tutorial</span>
+                    </div>
+                    <h3 class="font-semibold text-ink-900 dark:text-ink-50 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2 leading-snug">
+                        Introducing Eventra: Domain Events Made Simple
+                    </h3>
+                    <p class="text-sm text-ink-500 dark:text-ink-400 leading-relaxed line-clamp-2">
+                        Cara membuat framework Domain Event sederhana, dari konsep sampai publish ke NuGet.
+                    </p>
+                </div>
+            </article>
+
+            <article class="group bg-white dark:bg-ink-950 rounded-2xl border border-ink-200 dark:border-ink-800 overflow-hidden hover:border-emerald-300 dark:hover:border-emerald-700 hover:shadow-xl hover:shadow-emerald-500/10 transition-all">
+                <div class="aspect-video bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+                    <div class="absolute inset-0 grid place-items-center">
+                        <svg class="w-12 h-12 sm:w-14 sm:h-14 text-white/90 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                    </div>
+                </div>
+                <div class="p-5 sm:p-6">
+                    <div class="flex items-center gap-2 mb-3 flex-wrap">
+                        <span class="text-xs font-mono text-ink-400 dark:text-ink-500">Coming soon</span>
+                        <span class="w-1 h-1 rounded-full bg-ink-300 dark:bg-ink-700"></span>
+                        <span class="text-xs font-medium px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900">Concept</span>
+                    </div>
+                    <h3 class="font-semibold text-ink-900 dark:text-ink-50 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors mb-2 leading-snug">
+                        Clean Architecture: Why It Matters
+                    </h3>
+                    <p class="text-sm text-ink-500 dark:text-ink-400 leading-relaxed line-clamp-2">
+                        Penjelasan kenapa memisahkan layer itu penting, dengan contoh nyata dari berbagai stack.
+                    </p>
+                </div>
+            </article>
+
+            <article class="group bg-white dark:bg-ink-950 rounded-2xl border border-ink-200 dark:border-ink-800 overflow-hidden hover:border-amber-300 dark:hover:border-amber-700 hover:shadow-xl hover:shadow-amber-500/10 transition-all sm:col-span-2 lg:col-span-1">
+                <div class="aspect-video bg-gradient-to-br from-amber-500 via-orange-500 to-rose-500 relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+                    <div class="absolute inset-0 grid place-items-center">
+                        <svg class="w-12 h-12 sm:w-14 sm:h-14 text-white/90 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                </div>
+                <div class="p-5 sm:p-6">
+                    <div class="flex items-center gap-2 mb-3 flex-wrap">
+                        <span class="text-xs font-mono text-ink-400 dark:text-ink-500">Coming soon</span>
+                        <span class="w-1 h-1 rounded-full bg-ink-300 dark:bg-ink-700"></span>
+                        <span class="text-xs font-medium px-2 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">Deep Dive</span>
+                    </div>
+                    <h3 class="font-semibold text-ink-900 dark:text-ink-50 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2 leading-snug">
+                        Multi-Stack Development: My Approach
+                    </h3>
+                    <p class="text-sm text-ink-500 dark:text-ink-400 leading-relaxed line-clamp-2">
+                        Bagaimana saya berpindah antar stack (.NET, JS, PHP, mobile) dan tetap produktif.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+        <!-- Note -->
+        <div class="mt-8 sm:mt-12 flex items-start sm:items-center justify-center gap-2 text-xs sm:text-sm text-ink-500 dark:text-ink-400 text-center sm:text-left px-4">
+            <svg class="w-4 h-4 text-primary-500 shrink-0 mt-0.5 sm:mt-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Artikel & video sedang disiapkan. <a href="https://twitter.com/azizp2" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">Follow di Twitter</a> untuk update.</span>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CONTACT / CTA
+============================================================ -->
+<section id="contact" class="border-b border-ink-100 dark:border-ink-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-24">
+        <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-primary-600 via-violet-600 to-rose-500 px-5 sm:px-8 md:px-16 py-10 sm:py-14 md:py-20 shadow-2xl shadow-primary-500/30">
+            <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, white 1.5px, transparent 0); background-size: 32px 32px;"></div>
+            <div class="absolute -top-24 -right-24 w-48 sm:w-64 h-48 sm:h-64 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 w-48 sm:w-64 h-48 sm:h-64 rounded-full bg-white/10 blur-3xl"></div>
+
+            <div class="relative max-w-3xl mx-auto text-center text-white">
+                <div class="inline-flex items-center gap-2 h-7 px-3 rounded-full bg-white/15 backdrop-blur border border-white/20 text-xs font-medium mb-4 sm:mb-5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-soft"></span>
+                    <span>Available for new projects</span>
+                </div>
+
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-[-0.02em] mb-3 sm:mb-4 leading-tight">
+                    Punya project?<br>Mari kita bicarakan.
+                </h2>
+                <p class="opacity-90 mb-6 sm:mb-8 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+                    Terbuka untuk freelance, kolaborasi open source, atau konsultasi arsitektur.
+                    Respon dalam 24 jam.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center">
+                    <a href="mailto:azis@example.com" class="inline-flex items-center justify-center gap-2 h-11 sm:h-12 px-5 sm:px-6 rounded-lg text-sm font-semibold bg-white text-primary-700 hover:bg-primary-50 transition whitespace-nowrap shadow-lg">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Kirim email
+                    </a>
+                    <a href="https://twitter.com/azizp2" class="inline-flex items-center justify-center gap-2 h-11 sm:h-12 px-5 sm:px-6 rounded-lg text-sm font-semibold bg-white/15 backdrop-blur border border-white/25 text-white hover:bg-white/25 transition whitespace-nowrap">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        DM di Twitter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-ink-100 dark:border-ink-900 bg-gradient-to-b from-white to-ink-50 dark:from-ink-950 dark:to-ink-900/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 sm:gap-10 mb-8 sm:mb-12">
+            <div class="col-span-2">
+                <div class="flex items-center gap-2.5 mb-3 sm:mb-4">
+                    <span class="w-7 h-7 rounded-md bg-gradient-to-br from-primary-500 via-violet-500 to-rose-500 text-white grid place-items-center font-bold text-xs shadow-md shadow-primary-500/30">A</span>
+                    <span class="font-semibold text-sm">Abdul Azis</span>
+                </div>
+                <p class="text-sm text-ink-500 dark:text-ink-400 leading-relaxed max-w-xs">
+                    Software Engineer building web & mobile products, and open source tools.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-ink-900 dark:text-ink-100 mb-3 sm:mb-4">Work</h4>
+                <ul class="space-y-2 sm:space-y-2.5 text-sm text-ink-500 dark:text-ink-400">
+                    <li><a href="#opensource" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Open Source</a></li>
+                    <li><a href="#services" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Services</a></li>
+                    <li><a href="#contact" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-ink-900 dark:text-ink-100 mb-3 sm:mb-4">Content</h4>
+                <ul class="space-y-2 sm:space-y-2.5 text-sm text-ink-500 dark:text-ink-400">
+                    <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Blog</a></li>
+                    <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Videos</a></li>
+                    <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">About</a></li>
+                </ul>
+            </div>
+            <div class="col-span-2 md:col-span-1">
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-ink-900 dark:text-ink-100 mb-3 sm:mb-4">Follow</h4>
+                <ul class="space-y-2 sm:space-y-2.5 text-sm text-ink-500 dark:text-ink-400">
+                    <li><a href="https://github.com/azizp2" class="hover:text-primary-600 dark:hover:text-primary-400 transition">GitHub</a></li>
+                    <li><a href="https://twitter.com/azizp2" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Twitter / X</a></li>
+                    <li><a href="https://linkedin.com/in/abdulazis" class="hover:text-primary-600 dark:hover:text-primary-400 transition">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-6 sm:pt-8 border-t border-ink-100 dark:border-ink-900 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 text-xs sm:text-sm text-ink-500 dark:text-ink-400">
+            <p>© 2026 Abdul Azis. All rights reserved.</p>
+            <p class="text-xs font-mono">Made with care</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        menu.classList.toggle('open');
+
+        if (menu.classList.contains('open')) {
+            icon.innerHTML = '<path d="M6 18L18 6M6 6l12 12"/>';
+        } else {
+            icon.innerHTML = '<path d="M4 6h16M4 12h16M4 18h16"/>';
+        }
+    }
+
+    function closeMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        menu.classList.remove('open');
+        icon.innerHTML = '<path d="M4 6h16M4 12h16M4 18h16"/>';
+    }
+</script>
+
+</body>
+</html>
